@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Felipe Piccinato — Motion Designer e Editor de Vídeo</title>
+<meta name="description" content="Portfólio de Felipe Piccinato: motion design, vinhetas, comerciais, vídeo e direção de arte. Criatividade e estratégia em movimento.">
+<meta property="og:title" content="Felipe Piccinato — Motion Designer">
+<meta property="og:description" content="Peças que fazem a pessoa parar. Motion, vídeo e direção de arte.">
+<meta property="og:image" content="assets/capas/rock-n-pop.png">
+<meta name="theme-color" content="#efebe2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/marca/mascote.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span id="cursorRotulo"></span></div>
+
+<header class="nav" id="nav">
+  <a class="nav-marca" href="#topo" aria-label="Felipe Piccinato, início"><img src="assets/marca/mascote.png" alt="Mascote de Felipe Piccinato"></a>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="#trabalhos">Trabalhos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#processo">Processo</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <button class="botao botao-vermelho botao-mini" id="botaoTourNav" type="button">Tour de 2 min</button>
+</header>
+
+<main id="topo">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-brilho" id="heroBrilho" aria-hidden="true"></div>
+
+    <div class="hero-topo">
+      <p class="hero-etiqueta">Portfólio · 2026</p>
+      <p class="hero-etiqueta hero-etiqueta-dir">Motion Designer<br>Editor de Vídeo</p>
+    </div>
+
+    <h1 class="hero-nome" aria-label="Felipe Piccinato">
+      <span class="linha"><span>Felipe</span></span>
+      <span class="linha linha-destaque"><span>Piccinato</span></span>
+    </h1>
+
+    <div class="selo" aria-hidden="true">
+      <svg viewBox="0 0 200 200">
+        <defs><path id="circulo" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+        <text><textPath href="#circulo" startOffset="0" textLength="482" lengthAdjust="spacing">Motion · Vídeo · Direção de arte · Motion · Vídeo · Direção de arte ·</textPath></text>
+      </svg>
+      <span>✦</span>
+    </div>
+
+    <div class="hero-base">
+      <div class="hero-texto">
+        <p class="hero-sub"><strong>Motion design e vídeo com estratégia.</strong> Vinhetas, comerciais, VSLs e conteúdo para redes que capturam a atenção, comunicam com clareza e sustentam a marca, com agilidade e acabamento profissional.</p>
+        <div class="hero-acoes">
+          <a class="botao botao-escuro" href="#trabalhos">Ver trabalhos <span aria-hidden="true">↓</span></a>
+          <button class="botao botao-vermelho" id="botaoTourHero" type="button"><span class="play" aria-hidden="true"></span>Tour de 2 minutos</button>
+        </div>
+        <dl class="hero-numeros">
+          <div><dt data-contar="10" data-prefixo="+">+0</dt><dd>anos de experiência</dd></div>
+          <div><dt data-contar="150" data-prefixo="+">+0</dt><dd>clientes atendidos</dd></div>
+          <div><dt id="numPecas" data-contar="14">0</dt><dd>peças nesta seleção</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-mosaico" id="heroMosaico" aria-hidden="true">
+        <figure class="m m1" data-prof="1.0"><img src="assets/yt/jMk6en-rvu0.jpg" alt=""></figure>
+        <figure class="m m2" data-prof="1.6"><img src="assets/yt/VDkhXtUOYVs.jpg" alt=""></figure>
+        <figure class="m m3" data-prof="0.7"><img src="assets/capas/rock-n-pop.png" alt=""></figure>
+        <figure class="m m4" data-prof="1.3"><img src="assets/capas/fisica.png" alt=""></figure>
+        <figure class="m m5" data-prof="0.9"><img src="assets/capas/jp-ibope.png" alt=""></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRABALHOS -->
+  <section class="secao" id="trabalhos">
+    <div class="secao-topo reveal">
+      <p class="rotulo"><b>01</b> Trabalhos</p>
+      <h2>Uma seleção do que eu faço <em>melhor.</em></h2>
+      <p class="secao-sub">Filtre por tipo de trabalho e clique numa peça para assistir e ver a ideia por trás dela. Setas do teclado navegam entre as peças.</p>
+    </div>
+
+    <div class="filtros-linha reveal">
+      <div class="filtros" id="filtros" role="tablist" aria-label="Filtrar por tipo de trabalho"></div>
+    </div>
+    <h3 class="grupo-titulo" id="tituloHorizontal"><span>Horizontal</span><small>Vídeos longos, vinhetas e comerciais</small></h3>
+    <div class="grade" id="grade" aria-live="polite"></div>
+    <h3 class="grupo-titulo" id="tituloVertical"><span>Vertical</span><small>Reels e vídeos para redes sociais</small></h3>
+    <div class="reels-grade" id="reelsGrade" aria-live="polite"></div>
+    <div class="grade-mais" id="gradeMais" hidden>
+      <button class="botao-mais" id="botaoMais" type="button" aria-expanded="false" aria-controls="grade reelsGrade">
+        <span id="botaoMaisTexto">Ver mais projetos</span>
+        <i aria-hidden="true">+</i>
+      </button>
+    </div>
+  </section>
+
+
+  <!-- SOBRE -->
+  <section class="secao secao-escura" id="sobre">
+    <div class="sobre">
+      <figure class="sobre-foto reveal">
+        <div class="sobre-moldura">
+          <img src="assets/foto/felipe.png" alt="Retrato em preto e branco de Felipe Piccinato">
+          <i class="fita-adesiva" aria-hidden="true"></i>
+        </div>
+      </figure>
+      <div class="sobre-texto reveal">
+        <p class="rotulo"><b>02</b> Sobre</p>
+        <h2 class="sobre-ola">Oi, eu sou o Felipe.</h2>
+        <p class="sobre-lide">Crio <em>vídeos com propósito</em> para marcas que querem ser notadas.</p>
+        <p>Motion designer e editor de vídeo com mais de dez anos de atuação e formação em Rádio e Televisão. Minha trajetória passa por design gráfico, direção de arte e produção audiovisual, e hoje se concentra em motion design e edição para marcas, agências e veículos de comunicação.</p>
+        <p>Atuo do conceito à entrega: pesquiso, desenvolvo a ideia, produzo e finalizo peças como vinhetas, comerciais, VSLs e conteúdo para redes sociais. Integro inteligência artificial ao fluxo de produção para ganhar agilidade sem abrir mão de criatividade e acabamento.</p>
+
+        <h3 class="sobre-subtitulo">Experiência</h3>
+        <div class="trilha">
+          <div class="trilha-item"><b>2016–atual</b><span><strong>Freelancer</strong> · Motion Designer e Editor de Vídeo<br><small>Projetos para rádios, escolas, comércio e agências, como Jovem Pan, Rádio Beira Mar, Colégio Planck e Poli-Pet</small></span></div>
+          <div class="trilha-item"><b>2026</b><span><strong>DirectCash</strong> · Editor de Vídeo<br><small>VSLs, conteúdo para Instagram e automações com IA</small></span></div>
+          <div class="trilha-item"><b>2024–25</b><span><strong>GS2 Marketing</strong> · Motion Designer<br><small>Vinhetas, ilustrações e vídeos para redes</small></span></div>
+          <div class="trilha-item"><b>2022–24</b><span><strong>Gecko Marketing Digital</strong> · Diretor de Arte<br><small>Equipe de design, identidade visual e campanhas</small></span></div>
+          <div class="trilha-item"><b>2022–23</b><span><strong>Manza Studio</strong> · Editor-Chefe<br><small>Podcasts: gravação e edição</small></span></div>
+        </div>
+
+        <h3 class="sobre-subtitulo">Ferramentas</h3>
+        <ul class="ferramentas" aria-label="Ferramentas">
+          <li title="After Effects"><svg viewBox="0 0 48 48" role="img" aria-label="After Effects"><rect x="1.5" y="1.5" width="45" height="45" rx="10" fill="#00005B" stroke="#9999FF" stroke-width="2"/><text x="24" y="31.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="21" fill="#9999FF">Ae</text></svg></li>
+          <li title="Premiere Pro"><svg viewBox="0 0 48 48" role="img" aria-label="Premiere Pro"><rect x="1.5" y="1.5" width="45" height="45" rx="10" fill="#00005B" stroke="#9999FF" stroke-width="2"/><text x="24" y="31.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="21" fill="#9999FF">Pr</text></svg></li>
+          <li title="Photoshop"><svg viewBox="0 0 48 48" role="img" aria-label="Photoshop"><rect x="1.5" y="1.5" width="45" height="45" rx="10" fill="#001E36" stroke="#31A8FF" stroke-width="2"/><text x="24" y="31.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="21" fill="#31A8FF">Ps</text></svg></li>
+          <li title="Illustrator"><svg viewBox="0 0 48 48" role="img" aria-label="Illustrator"><rect x="1.5" y="1.5" width="45" height="45" rx="10" fill="#330000" stroke="#FF9A00" stroke-width="2"/><text x="24" y="31.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="21" fill="#FF9A00">Ai</text></svg></li>
+          <li title="InDesign"><svg viewBox="0 0 48 48" role="img" aria-label="InDesign"><rect x="1.5" y="1.5" width="45" height="45" rx="10" fill="#49021F" stroke="#FF3366" stroke-width="2"/><text x="24" y="31.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="21" fill="#FF3366">Id</text></svg></li>
+          <li title="Claude"><svg viewBox="0 0 48 48" role="img" aria-label="Claude"><rect x="1.5" y="1.5" width="45" height="45" rx="10" fill="#D97757"/><g stroke="#FBF3EA" stroke-width="3.6" stroke-linecap="round"><line x1="28.0" y1="24.6" x2="39.8" y2="26.2"/><line x1="27.2" y1="26.5" x2="32.7" y2="30.8"/><line x1="25.5" y1="27.7" x2="29.6" y2="37.9"/><line x1="23.4" y1="28.0" x2="22.6" y2="33.9"/><line x1="21.5" y1="27.2" x2="14.1" y2="36.6"/><line x1="20.3" y1="25.5" x2="12.9" y2="28.5"/><line x1="20.0" y1="23.4" x2="9.1" y2="21.9"/><line x1="20.8" y1="21.5" x2="15.3" y2="17.2"/><line x1="22.5" y1="20.3" x2="18.0" y2="9.2"/><line x1="24.6" y1="20.0" x2="25.4" y2="14.1"/><line x1="26.5" y1="20.8" x2="32.6" y2="13.0"/><line x1="27.7" y1="22.5" x2="35.1" y2="19.5"/></g></svg></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section class="secao" id="processo">
+    <div class="secao-topo reveal">
+      <p class="rotulo"><b>03</b> Processo</p>
+      <h2>Do briefing à entrega, <em>um processo claro.</em></h2>
+    </div>
+    <ol class="passos">
+      <li class="passo reveal"><span class="passo-num">1</span><h3>Briefing</h3><p>Levantamento de objetivo, público e canal. Saber onde a peça vai rodar (TV, mídia indoor, redes sociais ou página de vendas) define formato, duração e linguagem.</p></li>
+      <li class="passo reveal"><span class="passo-num">2</span><h3>Conceito</h3><p>Pesquisa de referências, roteiro visual e definição da linha criativa. Cada decisão de cor, ritmo e tipografia parte de uma ideia central, e não do acaso.</p></li>
+      <li class="passo reveal"><span class="passo-num">3</span><h3>Produção</h3><p>Motion, edição e design com acabamento profissional. Ferramentas de IA automatizam as tarefas repetitivas e liberam tempo para o que diferencia a peça.</p></li>
+      <li class="passo reveal"><span class="passo-num">4</span><h3>Entrega</h3><p>Arquivos finalizados nos formatos de cada canal, dentro do prazo e prontos para publicar, com revisões objetivas e alinhadas desde o início.</p></li>
+    </ol>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <div class="contato-miolo reveal">
+      <p class="rotulo rotulo-escuro"><b>04</b> Contato</p>
+      <h2>Tem uma ideia?<br>Vamos <em>conversar.</em></h2>
+      <div class="contato-acoes">
+        <a class="botao botao-escuro botao-grande" href="https://wa.me/5512992455255" target="_blank" rel="noopener">Chamar no WhatsApp <span aria-hidden="true">→</span></a>
+        <a class="botao botao-contorno-escuro botao-grande" href="mailto:felipepiccinato@hotmail.com">felipepiccinato@hotmail.com</a>
+      </div>
+      <ul class="contato-links">
+        <li><a href="https://www.behance.net/piccinato" target="_blank" rel="noopener">Behance ↗</a></li>
+        <li><a href="assets/documentos/curriculo-felipe-piccinato.pdf" download>Baixar currículo (PDF) ↓</a></li>
+        <li><span>+55 12 99245-5255</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <span>© 2026 Felipe Piccinato</span>
+  <span>Motion Designer · São José dos Campos, SP</span>
+  <a href="#topo">Voltar ao topo ↑</a>
+</footer>
+
+<!-- VISUALIZADOR DE CASE -->
+<div class="caso" id="caso" role="dialog" aria-modal="true" aria-labelledby="casoTitulo" hidden>
+  <div class="caso-fundo" data-fechar></div>
+  <div class="caso-janela" id="casoJanela">
+    <button class="caso-fechar" type="button" data-fechar aria-label="Fechar (Esc)">✕</button>
+
+    <div class="caso-midia" id="casoMidia">
+      <div class="caso-imagem" id="casoImagem"></div>
+      <div class="caso-contador" id="casoContador"></div>
+    </div>
+
+    <div class="caso-info" id="casoInfo">
+      <div class="caso-tour" id="casoTour" hidden></div>
+      <p class="caso-categoria" id="casoCategoria"></p>
+      <h3 id="casoTitulo"></h3>
+      <p class="caso-cliente" id="casoCliente"></p>
+
+      <h4>A ideia</h4>
+      <p class="caso-ideia" id="casoIdeia"></p>
+
+      <div id="casoPapelBloco" hidden>
+        <h4>Meu papel</h4>
+        <p id="casoPapel"></p>
+      </div>
+
+      <h4>O que chama atenção</h4>
+      <ul class="caso-lista" id="casoLista"></ul>
+
+      <div class="caso-acoes">
+        <a class="botao botao-contorno-escuro botao-mini" id="casoYoutube" target="_blank" rel="noopener" hidden>Ver no YouTube ↗</a>
+        <a class="botao botao-contorno-escuro botao-mini" id="casoBehance" target="_blank" rel="noopener" hidden>Ver no Behance ↗</a>
+        <button class="botao botao-contorno-escuro botao-mini" id="casoCopiar" type="button">Copiar link da peça</button>
+      </div>
+    </div>
+
+    <nav class="caso-nav" aria-label="Navegar entre peças">
+      <button type="button" id="casoAnterior" aria-label="Peça anterior"><span>←</span><em>Anterior</em></button>
+      <button type="button" id="casoProximo" aria-label="Próxima peça"><em id="casoProximoTexto">Próxima</em><span>→</span></button>
+    </nav>
+  </div>
+</div>
+
+<script src="js/projetos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
