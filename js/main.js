@@ -222,7 +222,7 @@
     midia.classList.toggle("vertical", !!p.vertical);
     var imagem = document.getElementById("casoImagem");
     imagem.innerHTML = "";
-    if (p.youtubeId) {
+    if (p.youtubeId && location.protocol !== "file:") { // o YouTube recusa o player (erro 153) quando a página é aberta como arquivo
       var f = document.createElement("iframe");
       f.src = embedUrl(p);
       f.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture";
