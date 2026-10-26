@@ -24,7 +24,7 @@
   var botaoMaisReelsTexto = document.getElementById("botaoMaisReelsTexto");
 
   var LIMITE_INICIAL = 6;
-  var LIMITE_REELS = 6;
+  var LIMITE_REELS = 5;
   var categoriaAtiva = "todos";
   var clienteAtivo = "todos";
   var clienteReelsAtivo = "todos";

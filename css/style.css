@@ -319,7 +319,7 @@ body.travado { overflow: hidden; }
 .sobre-foto { margin: 0; }
 
 /* Reels dentro de Trabalhos: 6 lado a lado, logo abaixo dos vídeos longos */
-#reelsGrade { margin-top: clamp(34px, 4vw, 60px); grid-template-columns: repeat(6, 1fr); }
+#reelsGrade { margin-top: clamp(34px, 4vw, 60px); grid-template-columns: repeat(5, 1fr); }
 #reelsGrade[hidden] { display: none; }
 @media (max-width: 1100px) { #reelsGrade { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 640px) { #reelsGrade { grid-template-columns: repeat(2, 1fr); } }
@@ -349,11 +349,6 @@ body.travado { overflow: hidden; }
 .selo { width: clamp(110px, 10vw, 150px); margin-left: calc(clamp(110px, 10vw, 150px) / -2); }
 .selo text { font-size: 16px; font-weight: 800; letter-spacing: .02em; }
 .selo > span { font-size: clamp(26px, 3.2vw, 42px); }
-
-/* Mascote espiando na divisa entre Processo e Contato */
-.mascote-divisor { position: relative; height: 0; z-index: 4; pointer-events: none; }
-.mascote-divisor img { position: absolute; left: 66%; top: 0; width: clamp(150px, 17vw, 240px); transform: translateY(-49.6%); }
-@media (max-width: 720px) { .mascote-divisor img { left: 50%; margin-left: calc(clamp(150px, 17vw, 240px) / -2); } }
 
 /* Ferramentas utilizadas na peça */
 .caso-ferramentas { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
