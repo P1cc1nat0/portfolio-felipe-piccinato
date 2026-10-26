@@ -152,13 +152,13 @@ window.PROJETOS_PORTFOLIO = [
   },
   {
     id: "poli-pet-tv",
-    titulo: "Vídeo TV Interna Poli-Pet",
-    cliente: "Poli-Pet",
+    titulo: "Vídeo TV Interna Polipet",
+    cliente: "Polipet",
     categoria: "institucional",
     formato: "TV interna de loja",
     capa: "assets/capas/poli-pet-tv.jpg",
     youtubeId: "0SnQT2mrAyY",
-    ideia: "Vídeo para a TV interna da loja Poli-Pet, que apresenta aos clientes, na hora da compra, os serviços e vantagens da loja: produtos com desconto, brindes, entrega e outros benefícios.",
+    ideia: "Vídeo para a TV interna da loja Polipet, que apresenta aos clientes, na hora da compra, os serviços e vantagens da loja: produtos com desconto, brindes, entrega e outros benefícios.",
     meuPapel: "Compreensão da linguagem da TV interna, separação dos materiais, criação e animação dos elementos, montagem e edição.",
     ferramentas: ["Illustrator", "After Effects", "Premiere Pro"]
   },
