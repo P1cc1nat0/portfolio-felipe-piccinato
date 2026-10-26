@@ -19,13 +19,17 @@
   var maisEl = document.getElementById("gradeMais");
   var botaoMaisEl = document.getElementById("botaoMais");
   var botaoMaisTexto = document.getElementById("botaoMaisTexto");
+  var reelsMaisEl = document.getElementById("reelsMais");
+  var botaoMaisReelsEl = document.getElementById("botaoMaisReels");
+  var botaoMaisReelsTexto = document.getElementById("botaoMaisReelsTexto");
 
   var LIMITE_INICIAL = 6;
   var LIMITE_REELS = 6;
   var categoriaAtiva = "todos";
   var clienteAtivo = "todos";
   var clienteReelsAtivo = "todos";
-  var expandido = false;
+  var expandido = false;       // horizontais
+  var expandidoReels = false;  // verticais
   var listaPrincipal = PRINCIPAIS.slice();
   var listaReels = REELS.slice();
 
@@ -87,6 +91,7 @@
       b.setAttribute("aria-selected", b.dataset.categoria === categoriaAtiva ? "true" : "false");
     });
     expandido = false;
+    expandidoReels = false;
     montarGrade();
   }
 
@@ -129,18 +134,22 @@
     var inicial = expandido ? listaPrincipal : listaPrincipal.slice(0, LIMITE_INICIAL);
     inicial.forEach(function (p, i) { gradeEl.appendChild(criarCard(p, i)); });
     montarReels();
-    atualizarBotaoMais();
+    atualizarBotoesMais();
   }
 
-  /* Vídeos longos (3 + 3) e, logo abaixo, os Reels (6 lado a lado). O "+" expande os dois. */
-  function atualizarBotaoMais() {
+  /* Cada grupo tem o próprio "+": horizontais logo abaixo da grade, verticais logo abaixo dos Reels. */
+  function atualizarBotoesMais() {
     var restPrincipal = Math.max(0, listaPrincipal.length - LIMITE_INICIAL);
-    var restReels = categoriaAtiva === "todos" ? Math.max(0, REELS.length - LIMITE_REELS) : 0; // "Redes sociais" já mostra todos
-    var restantes = restPrincipal + restReels;
-    maisEl.hidden = restantes === 0;
+    maisEl.hidden = restPrincipal === 0;
     botaoMaisEl.setAttribute("aria-expanded", expandido ? "true" : "false");
     botaoMaisEl.classList.toggle("aberto", expandido);
-    botaoMaisTexto.textContent = expandido ? "Mostrar menos" : "Ver mais " + restantes + (restantes === 1 ? " projeto" : " projetos");
+    botaoMaisTexto.textContent = expandido ? "Mostrar menos" : "Ver mais " + restPrincipal + (restPrincipal === 1 ? " projeto" : " projetos");
+
+    var restReels = categoriaAtiva === "todos" ? Math.max(0, REELS.length - LIMITE_REELS) : 0; // "Redes sociais" já mostra todos
+    reelsMaisEl.hidden = restReels === 0;
+    botaoMaisReelsEl.setAttribute("aria-expanded", expandidoReels ? "true" : "false");
+    botaoMaisReelsEl.classList.toggle("aberto", expandidoReels);
+    botaoMaisReelsTexto.textContent = expandidoReels ? "Mostrar menos" : "Ver mais " + restReels + (restReels === 1 ? " projeto" : " projetos");
   }
 
   function alternarExpansao() {
@@ -149,12 +158,18 @@
     if (!expandido) document.getElementById("trabalhos").scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  function alternarExpansaoReels() {
+    expandidoReels = !expandidoReels;
+    montarGrade();
+    if (!expandidoReels) tituloVerticalEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   function montarReels() {
     var mostrar = categoriaAtiva === "todos" || categoriaAtiva === "reels";
     reelsGradeEl.hidden = !mostrar;
     listaReels = mostrar ? REELS.slice() : [];
     reelsGradeEl.innerHTML = "";
-    (expandido || categoriaAtiva === "reels" ? listaReels : listaReels.slice(0, LIMITE_REELS)).forEach(function (p, i) {
+    (expandidoReels || categoriaAtiva === "reels" ? listaReels : listaReels.slice(0, LIMITE_REELS)).forEach(function (p, i) {
       var card = criar("button", "reel");
       card.type = "button";
       card.style.setProperty("--i", i);
@@ -189,9 +204,10 @@
       papelBloco.hidden = true;
     }
 
-    var lista = document.getElementById("casoLista");
-    lista.innerHTML = "";
-    p.destaques.forEach(function (t) { lista.appendChild(criar("li", "", escapar(t))); });
+    var ferramentas = document.getElementById("casoFerramentas");
+    ferramentas.innerHTML = "";
+    (p.ferramentas || []).forEach(function (t) { ferramentas.appendChild(criar("li", "", escapar(t))); });
+    ferramentas.previousElementSibling.hidden = !(p.ferramentas && p.ferramentas.length);
 
     var linkBehance = document.getElementById("casoBehance");
     var linkYoutube = document.getElementById("casoYoutube");
@@ -427,6 +443,7 @@
 
   /* ---------- Início ---------- */
   botaoMaisEl.addEventListener("click", alternarExpansao);
+  botaoMaisReelsEl.addEventListener("click", alternarExpansaoReels);
   montarFiltros();
   montarGrade();
   montarReels();

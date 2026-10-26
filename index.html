@@ -38,7 +38,7 @@
 
     <div class="hero-topo">
       <p class="hero-etiqueta">Portfólio · 2026</p>
-      <p class="hero-etiqueta hero-etiqueta-dir">Motion Designer<br>Editor de Vídeo</p>
+      <p class="hero-etiqueta hero-etiqueta-dir">Motion Designer<br>Editor de Vídeo<br>Diretor de Arte</p>
     </div>
 
     <h1 class="hero-nome" aria-label="Felipe Piccinato">
@@ -49,7 +49,7 @@
     <div class="selo" aria-hidden="true">
       <svg viewBox="0 0 200 200">
         <defs><path id="circulo" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
-        <text><textPath href="#circulo" startOffset="0" textLength="482" lengthAdjust="spacing">Motion · Vídeo · Direção de arte · Motion · Vídeo · Direção de arte ·</textPath></text>
+        <text><textPath href="#circulo" startOffset="0" textLength="486" lengthAdjust="spacing">Motion · Vídeo · Direção de arte ·</textPath></text>
       </svg>
       <span>✦</span>
     </div>
@@ -91,11 +91,17 @@
     </div>
     <h3 class="grupo-titulo" id="tituloHorizontal"><span>Horizontal</span><small>Vídeos longos, vinhetas e comerciais</small></h3>
     <div class="grade" id="grade" aria-live="polite"></div>
+    <div class="grade-mais" id="gradeMais" hidden>
+      <button class="botao-mais" id="botaoMais" type="button" aria-expanded="false" aria-controls="grade">
+        <span id="botaoMaisTexto">Ver mais projetos</span>
+        <i aria-hidden="true">+</i>
+      </button>
+    </div>
     <h3 class="grupo-titulo" id="tituloVertical"><span>Vertical</span><small>Reels e vídeos para redes sociais</small></h3>
     <div class="reels-grade" id="reelsGrade" aria-live="polite"></div>
-    <div class="grade-mais" id="gradeMais" hidden>
-      <button class="botao-mais" id="botaoMais" type="button" aria-expanded="false" aria-controls="grade reelsGrade">
-        <span id="botaoMaisTexto">Ver mais projetos</span>
+    <div class="grade-mais" id="reelsMais" hidden>
+      <button class="botao-mais" id="botaoMaisReels" type="button" aria-expanded="false" aria-controls="reelsGrade">
+        <span id="botaoMaisReelsTexto">Ver mais projetos</span>
         <i aria-hidden="true">+</i>
       </button>
     </div>
@@ -154,6 +160,9 @@
     </ol>
   </section>
 
+  <!-- Mascote entre Processo e Contato -->
+  <div class="mascote-divisor" aria-hidden="true"><img src="assets/marca/mascote.png" alt=""></div>
+
   <!-- CONTATO -->
   <section class="contato" id="contato">
     <div class="contato-miolo reveal">
@@ -164,9 +173,9 @@
         <a class="botao botao-contorno-escuro botao-grande" href="mailto:felipepiccinato@hotmail.com">felipepiccinato@hotmail.com</a>
       </div>
       <ul class="contato-links">
+        <li><a href="https://www.linkedin.com/in/felipe-piccinato-lorenzoni/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
         <li><a href="https://www.behance.net/piccinato" target="_blank" rel="noopener">Behance ↗</a></li>
         <li><a href="assets/documentos/curriculo-felipe-piccinato.pdf" download>Baixar currículo (PDF) ↓</a></li>
-        <li><span>+55 12 99245-5255</span></li>
       </ul>
     </div>
   </section>
@@ -204,8 +213,8 @@
         <p id="casoPapel"></p>
       </div>
 
-      <h4>O que chama atenção</h4>
-      <ul class="caso-lista" id="casoLista"></ul>
+      <h4>Ferramentas</h4>
+      <ul class="caso-ferramentas" id="casoFerramentas"></ul>
 
       <div class="caso-acoes">
         <a class="botao botao-contorno-escuro botao-mini" id="casoYoutube" target="_blank" rel="noopener" hidden>Ver no YouTube ↗</a>

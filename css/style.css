@@ -331,3 +331,38 @@ body.travado { overflow: hidden; }
 .grupo-titulo[hidden] { display: none; }
 #tituloVertical { margin-top: clamp(44px, 5vw, 76px); }
 #grade[hidden] { display: none; }
+
+/* ======================================================================
+   Rodada 3: tamanhos padronizados, selo legível, mascote, ferramentas, player vertical
+   ====================================================================== */
+
+/* Títulos de seção (h2) e subtítulos (h3) com um tamanho só em todo o site */
+.secao h2, .contato h2, .sobre-texto h2, .sobre-texto .sobre-ola { font-size: clamp(28px, 3.2vw, 46px); letter-spacing: -.04em; line-height: 1.05; }
+.contato h2 { margin-bottom: 38px; }
+.grupo-titulo, .sobre-subtitulo, .passo h3, .sobre-texto .sobre-lide { font-size: clamp(19px, 1.7vw, 24px); letter-spacing: -.03em; line-height: 1.15; }
+.sobre-texto .sobre-lide { margin-bottom: 28px; }
+.caso-info h3 { font-size: clamp(22px, 2vw, 28px); }
+.card h3 { font-size: clamp(15px, 1.15vw, 18px); }
+.passo-num { font-size: clamp(90px, 9vw, 140px); }
+
+/* Selo giratório do hero, maior e com letras mais grossas */
+.selo { width: clamp(110px, 10vw, 150px); margin-left: calc(clamp(110px, 10vw, 150px) / -2); }
+.selo text { font-size: 16px; font-weight: 800; letter-spacing: .02em; }
+.selo > span { font-size: clamp(26px, 3.2vw, 42px); }
+
+/* Mascote espiando na divisa entre Processo e Contato */
+.mascote-divisor { position: relative; height: 0; z-index: 4; pointer-events: none; }
+.mascote-divisor img { position: absolute; left: 66%; top: 0; width: clamp(150px, 17vw, 240px); transform: translateY(-49.6%); }
+@media (max-width: 720px) { .mascote-divisor img { left: 50%; margin-left: calc(clamp(150px, 17vw, 240px) / -2); } }
+
+/* Ferramentas utilizadas na peça */
+.caso-ferramentas { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.caso-ferramentas li { font-family: var(--f-titulo); font-weight: 700; font-size: 13px; padding: 7px 14px; border: 2px solid var(--tinta); border-radius: 999px; background: #fff; }
+
+/* Player vertical: coluna do vídeo mais estreita e vídeo inteiro dentro da janela */
+.caso-janela:has(.caso-midia.vertical) { grid-template-columns: minmax(0, .72fr) minmax(0, 1fr); }
+.caso-midia.vertical .caso-imagem { display: flex; align-items: center; justify-content: center; padding: 16px 0 52px; box-sizing: border-box; }
+.caso-midia.vertical .caso-imagem iframe { flex: none; width: auto; height: 100%; max-width: 100%; aspect-ratio: 9 / 16; border-radius: 6px; }
+@media (max-width: 860px) {
+  .caso-janela:has(.caso-midia.vertical) { grid-template-columns: 1fr; grid-template-rows: 62vh minmax(0, 1fr) auto; }
+}

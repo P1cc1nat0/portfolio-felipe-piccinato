@@ -7,13 +7,14 @@
   - cliente: nome exibido. Os filtros por cliente são montados sozinhos a partir deste campo.
   - destaque: true para as peças em destaque (aparecem primeiro na grade).
   - meuPapel: o que você fez na peça.
+  - ferramentas: lista de programas usados na peça.
 */
 window.CATEGORIAS_PORTFOLIO = [
   { id: "motion",        nome: "Motion & Vinhetas" },
+  { id: "reels",         nome: "Redes sociais" },
   { id: "comercial",     nome: "Comerciais & Mídia" },
   { id: "institucional", nome: "Institucional & Documentário" },
-  { id: "social",        nome: "Social & Campanha" },
-  { id: "reels",         nome: "Redes sociais" }
+  { id: "social",        nome: "Social & Campanha" }
 ];
 
 window.PROJETOS_PORTFOLIO = [
@@ -21,413 +22,317 @@ window.PROJETOS_PORTFOLIO = [
   /* ---------------- MOTION & VINHETAS ---------------- */
   {
     id: "rock-n-pop",
-    titulo: "Rock 'n' Pop",
+    titulo: "Vinheta Rock n' Pop Rádio Jovem Pan",
     cliente: "Jovem Pan",
     categoria: "motion",
     formato: "Vinheta animada",
     capa: "assets/capas/rock-n-pop.png",
     youtubeId: "VlqZF9pE8Zw",
     destaque: true,
-    ideia: "Vinheta do programa Rock 'n' Pop, da Jovem Pan de São José dos Campos. O logotipo nasce num fundo preto granulado, riscado como a parede de um camarim, e o \"JP\" vermelho assume o lugar do \"O\" de POP. Raios, caveira e riscos de giz dão a assinatura do rock sem poluir a marca.",
-    destaques: [
-      "Player e onda de áudio ao fundo lembram que é rádio: o som está sempre implícito.",
-      "Paleta mínima, preto, branco e o vermelho da Jovem Pan, para a marca continuar mandando na tela.",
-      "Textura de papel e giz que traz o clima de show para um formato de poucos segundos."
-    ],
-    meuPapel: "Elementos gráficos, edição e montagem."
+    ideia: "Vinheta criada para o programa Rock 'n' Pop, da Rádio Jovem Pan. O desafio era traduzir a energia e a emoção do programa em uma assinatura forte, aplicada ao final dos vídeos publicados no Instagram sobre o Rock 'n' Pop e capaz de fixar a marca na memória do público.",
+    meuPapel: "Do entendimento da identidade visual e da emoção do programa ao desenvolvimento completo da peça: separação e animação dos elementos, edição do vídeo e trilha sonora.",
+    ferramentas: ["After Effects", "Illustrator", "Premiere Pro"]
   },
   {
     id: "planck-lego",
-    titulo: "Abertura Lego em 3D",
+    titulo: "Vinheta 3D Colégio Planck",
     cliente: "Colégio Planck",
     categoria: "motion",
     formato: "Vinheta animada 3D",
     capa: "assets/capas/planck-lego.jpg",
     youtubeId: "jMk6en-rvu0",
     destaque: true,
-    ideia: "Abertura em 3D criada para uma campanha do Colégio Planck com tema Lego. Blocos em amarelo e roxo, as cores da escola, voam e se espalham por um cenário claro, com profundidade e luz suave, transformando a marca da escola em brincadeira de montar.",
-    destaques: [
-      "Blocos nas cores da identidade do colégio, sem precisar de logotipo na primeira cena.",
-      "Cenário claro e limpo, que deixa as cores e as sombras dos blocos em primeiro plano.",
-      "Movimento em profundidade, com blocos em diferentes distâncias da câmera."
-    ],
-    meuPapel: "Montagem e edição."
+    ideia: "Vinheta que comunica a nova fase do Colégio Planck. As campanhas da escola giram em torno de crescimento e de montagem, uma referência ao universo Lego e à construção conjunta entre professores e alunos. A vinheta foi criada para assinar o final de todos os vídeos desse tema.",
+    meuPapel: "Estudo da identidade visual e criação do conceito, combinando peças de Lego e o logotipo do colégio em uma linguagem limpa, simples e educacional. Responsável pela modelagem 3D, animação, edição e sonorização.",
+    ferramentas: ["After Effects", "Blender 3D", "Premiere Pro"]
   },
   {
     id: "ary-barroso",
-    titulo: "Vinheta de apresentação",
+    titulo: "Vinheta Animada Escola de Música Ary Barroso",
     cliente: "Escola de Música Ary Barroso",
     categoria: "motion",
     formato: "Vinheta animada",
     capa: "assets/capas/ary-barroso.jpg",
     youtubeId: "VDkhXtUOYVs",
     destaque: true,
-    ideia: "Vinheta da escola de música Ary Barroso, de São José dos Campos, feita em ilustração animada de traço branco sobre fundo azul-petróleo. Uma mão desenhada dedilha linhas que atravessam postes e montanhas, unindo música e paisagem numa cena só.",
-    destaques: [
-      "Traço fino em branco contra azul e tons terrosos, uma paleta delicada e musical.",
-      "As linhas horizontais funcionam ao mesmo tempo como cordas e como pauta.",
-      "Narrativa em cenas desenhadas, em vez de recursos prontos."
-    ],
-    meuPapel: "Criação das cenas, edição e montagem."
+    ideia: "Vinheta que reúne a identidade visual da escola de música Ary Barroso, com referências a instrumentos sonoros e a um ambiente acolhedor. A peça fecha vídeos de eventos e conteúdos publicados nas redes sociais da escola.",
+    meuPapel: "Compreensão da identidade da marca e criação do conceito, com ilustração, animação, edição e sonorização.",
+    ferramentas: ["After Effects", "Illustrator", "Premiere Pro"]
   },
   {
     id: "manzacast",
-    titulo: "Vinheta ManzaCast",
+    titulo: "Vinheta Manza Cast Podcast",
     cliente: "Manza Studio",
     categoria: "motion",
     formato: "Vinheta de podcast",
     capa: "assets/yt/pbKDZ2XgViE.jpg",
     youtubeId: "pbKDZ2XgViE",
     destaque: true,
-    ideia: "Vinheta de abertura do ManzaCast, podcast de arquitetura do Manza Studio. O título surge como um projeto técnico: letras em volume 3D desenhadas em linhas de estrutura, sobre uma malha de papel quadriculado, tudo em tons de cinza.",
-    destaques: [
-      "Linguagem de projeto arquitetônico (traçado, malha e volume) aplicada à tipografia.",
-      "Paleta cinza e branca, sóbria e coerente com o assunto do podcast.",
-      "Título em 3D que ganha forma aos poucos, como uma planta sendo construída."
-    ],
-    meuPapel: "Edição."
+    ideia: "Vinheta de abertura do ManzaCast, podcast de arquitetura, exibida no início de cada episódio. A linguagem visual parte do universo da construção e da arquitetura.",
+    meuPapel: "Estudo da comunicação visual da empresa, animação, sonorização e edição da vinheta.",
+    ferramentas: ["After Effects", "Premiere Pro"]
   },
   {
     id: "planck-fisica",
-    titulo: "O Maravilhoso Mundo da Física",
+    titulo: "Vinheta animada “O Maravilhoso Mundo da Física” Colégio Planck",
     cliente: "Colégio Planck",
     categoria: "motion",
     formato: "Vinheta animada",
     capa: "assets/capas/fisica.png",
     youtubeId: "gyHPv3Zcjdk",
     destaque: true,
-    ideia: "Vinheta de um dos programas do Colégio Planck. A proposta é que cada programa da escola, seja de física, química ou matemática, tenha a sua própria vinheta. Nesta, o professor aparece ilustrado, apoiado num átomo, dentro de um turbilhão de formas em amarelo, azul e roxo.",
-    destaques: [
-      "Personagem ilustrado que cria proximidade com o aluno logo no primeiro segundo.",
-      "Formas onduladas que lembram ondas e órbitas, reforçando o tema.",
-      "Título em arco, no estilo de cartaz, que dá identidade à série."
-    ],
-    meuPapel: "Edição e animação."
+    ideia: "Vinheta de apresentação dos programas do Colégio Planck: cada disciplina, como física, matemática e química, tem a sua própria. Esta abre as videoaulas de física com uma linguagem animada e acessível, pensada para os alunos.",
+    meuPapel: "Entendimento da proposta e da identidade visual, animação dos elementos desenhados, sonorização e edição.",
+    ferramentas: ["After Effects", "Premiere Pro", "Illustrator"]
   },
 
   /* ---------------- COMERCIAIS & MÍDIA ---------------- */
   {
     id: "jp-ibope",
-    titulo: "Ibope: líder em cobertura diária",
+    titulo: "Comercial Ibope Rádio Jovem Pan",
     cliente: "Jovem Pan",
     categoria: "comercial",
     formato: "Comercial para TV",
     capa: "assets/capas/jp-ibope.jpg",
     youtubeId: "J4oLUoEEPX0",
     destaque: true,
-    ideia: "Número de audiência costuma ser um slide chato. Aqui virou cena: silhuetas holográficas ligadas por uma rede de pontos representam os ouvintes, e frases como \"líder em cobertura diária\" e \"maior número de ouvintes por minuto\" entram em vermelho gigante.",
-    destaques: [
-      "Dado transformado em imagem: cada figura da rede é um ouvinte.",
-      "Tipografia grande, com o vermelho da marca no que importa.",
-      "Fonte da pesquisa e legenda em destaque, para a informação ficar clara e confiável."
-    ],
-    meuPapel: "Roteiro, edição e montagem."
+    ideia: "Comercial de TV que apresenta os números do Ibope da Rádio Jovem Pan e comunica ao público que ela é a rádio com mais ouvintes do Vale do Paraíba.",
+    meuPapel: "Compreensão da mensagem que a rádio queria transmitir, definição da estratégia, separação dos materiais, edição, sonorização e montagem.",
+    ferramentas: ["After Effects", "Premiere Pro"]
   },
   {
     id: "jp-programas",
-    titulo: "Sintonize 94,3 FM",
+    titulo: "Comercial Programas Rádio Jovem Pan",
     cliente: "Jovem Pan",
     categoria: "comercial",
     formato: "Comercial para TV",
     capa: "assets/capas/jp-programas.jpg",
     youtubeId: "xSIEcfF5qMY",
-    ideia: "Comercial de TV para apresentar os programas da rádio. Nada melhor que o gesto que todo ouvinte conhece: girar o botão do dial. A mão sobre um rádio antigo, com o ponteiro passando pela faixa, leva direto ao chamado \"Sintonize 94,3 FM\".",
-    destaques: [
-      "Imagem de rádio analógico traz nostalgia e reforça a ideia de sintonia.",
-      "Frequência em vermelho forte, o dado que o público precisa guardar.",
-      "Composição simples, que funciona em poucos segundos de TV."
-    ],
-    meuPapel: "Roteiro, montagem e edição."
+    ideia: "Comercial para TV que apresenta a programação da Rádio Jovem Pan: os horários, o que vai ao ar em cada um e quais são os programas. Uma forma visual e direta de mostrar ao público tudo o que a rádio oferece.",
+    meuPapel: "Compreensão da mensagem e da comunicação da rádio, definição da estratégia, separação dos materiais, edição, sonorização e montagem.",
+    ferramentas: ["After Effects", "Premiere Pro"]
   },
   {
     id: "jp-elevador",
-    titulo: "O seu cliente é a nossa audiência",
+    titulo: "Eletromídia Jovem Pan",
     cliente: "Jovem Pan",
     categoria: "comercial",
     formato: "Eletromídia para elevador",
     capa: "assets/capas/jp-elevador.jpg",
     youtubeId: "UlPCRvhKWoY",
-    ideia: "Conteúdo para as telas de elevador, com o recado de venda da rádio para o anunciante. Frases curtas em caixa alta, com o vermelho marcando a promessa, e elementos como boca e megafone em colagem de meio-tom, microfone e QR code de \"anuncie\" levam quem assiste a agir em poucos segundos.",
-    destaques: [
-      "Mensagens curtas e diretas, pensadas para leitura rápida em tela de elevador.",
-      "Colagem em meio-tom que traz textura e personalidade a uma mídia normalmente fria.",
-      "QR code de anúncio integrado ao layout, convertendo atenção em contato."
-    ],
-    meuPapel: "Roteiro, montagem e edição."
+    ideia: "Peça para as telas de elevadores e de prédios, criada para atrair anunciantes para a Rádio Jovem Pan. Por se tratar de uma mídia de exibição curta, a mensagem precisava ser rápida, direta e capaz de chamar atenção.",
+    meuPapel: "Compreensão da mensagem da rádio, definição da estratégia e do roteiro, montagem e animação dos elementos, edição e sonorização.",
+    ferramentas: ["Photoshop", "After Effects", "Premiere Pro"]
   },
 
   /* ---------------- INSTITUCIONAL & DOCUMENTÁRIO ---------------- */
   {
     id: "beira-mar-surf-pro",
-    titulo: "Cobertura do Surf Pro",
+    titulo: "Cobertura Evento Surf Pro",
     cliente: "Rádio Beira Mar",
     categoria: "institucional",
     formato: "Vídeo institucional",
     capa: "assets/capas/beira-mar-surf-pro.jpg",
     youtubeId: "4N-9QbqL6r0",
-    ideia: "Vídeo da Rádio Beira Mar, de Ubatuba, exibido no Surf Pro, evento que a emissora cobriu. O repórter fala direto para a câmera dentro do estúdio da rádio, com a marca BM 101.5 FM e o título da editoria aplicados sobre a imagem.",
-    destaques: [
-      "Enquadramento que mostra o estúdio da rádio, reforçando a identidade da emissora.",
-      "Gráficos de marca e de editoria que dão acabamento de telejornal.",
-      "Ritmo de edição pensado para exibição no evento e circulação nas redes."
-    ],
-    meuPapel: "Roteiro, edição e postagem."
+    ideia: "Vídeo-mensagem sobre a Rádio Beira Mar, exibido em um telão durante o Surf Pro, em Ubatuba, evento que a emissora cobriu. A peça apresenta ao público presente como a rádio funciona, o que entrega e como acompanhá-la nas redes sociais.",
+    meuPapel: "Entendimento do que a rádio queria comunicar no evento, roteiro baseado na comunicação que a emissora já utiliza, separação dos materiais, montagem, edição e sonorização.",
+    ferramentas: ["After Effects", "Premiere Pro"]
   },
   {
     id: "artcolor-institucional",
-    titulo: "Vídeo institucional",
+    titulo: "Vídeo Institucional Artcolor",
     cliente: "Art Color Texturas",
     categoria: "institucional",
     formato: "Vídeo institucional",
     capa: "assets/capas/artcolor-institucional.jpg",
     youtubeId: "tzAQn80CkPI",
-    ideia: "Vídeo institucional da Art Color Texturas, de Jacareí, criado para rodar nas redes sociais e também na tela do podcast que a empresa patrocina. Cenas de laboratório e frases como \"Texturas certificadas\" reforçam qualidade e confiança no produto.",
-    destaques: [
-      "Imagens de laboratório que traduzem rigor técnico e controle de qualidade.",
-      "Frases curtas em destaque na tela, legíveis mesmo sem som.",
-      "Um mesmo vídeo preparado para dois usos: redes sociais e tela de podcast."
-    ],
-    meuPapel: "Roteiro e edição."
+    ideia: "Vídeo institucional da Artcolor feito para circular nas redes sociais e em um podcast patrocinado pela empresa. A peça explica, de forma clara, o que a Artcolor faz e oferece.",
+    meuPapel: "Compreensão da mensagem e da comunicação da empresa para os dois canais, definição da estratégia e do roteiro, montagem, edição e sonorização.",
+    ferramentas: ["After Effects", "Premiere Pro"]
   },
   {
     id: "poli-pet-tv",
-    titulo: "Vídeo para TV interna",
+    titulo: "Vídeo TV Interna Poli-Pet",
     cliente: "Poli-Pet",
     categoria: "institucional",
     formato: "TV interna de loja",
     capa: "assets/capas/poli-pet-tv.jpg",
     youtubeId: "0SnQT2mrAyY",
-    ideia: "Vídeo feito para as telas dentro da loja da Poli-Pet, onde o cliente já está decidindo a compra, apresentando produtos e promoções. A peça divulga o Clube+ Poli-Pet, com cashback em todas as compras e cadastro gratuito por QR code, no verde-limão e no padrão de ícones pet da marca.",
-    destaques: [
-      "Informação central (cashback e cadastro gratuito) em lista curta e legível à distância.",
-      "QR code integrado ao layout para o cliente se cadastrar na hora.",
-      "Consistência com a identidade da marca em todos os pontos de contato."
-    ],
-    meuPapel: "Roteiro, edição e montagem."
+    ideia: "Vídeo para a TV interna da loja Poli-Pet, que apresenta aos clientes, na hora da compra, os serviços e vantagens da loja: produtos com desconto, brindes, entrega e outros benefícios.",
+    meuPapel: "Compreensão da linguagem da TV interna, separação dos materiais, criação e animação dos elementos, montagem e edição.",
+    ferramentas: ["Illustrator", "After Effects", "Premiere Pro"]
   },
   {
     id: "the-pet-gps",
-    titulo: "Funcionalidades da coleira GPS",
+    titulo: "Coleira GPS The Pet GPS",
     cliente: "The Pet GPS",
     categoria: "institucional",
     formato: "Vídeo para YouTube",
     capa: "assets/yt/3GgXCMHx9zg.jpg",
     youtubeId: "3GgXCMHx9zg",
-    ideia: "Vídeo para o canal da The Pet GPS, de São José dos Campos, apresentando as principais funcionalidades da coleira GPS: rastreamento em tempo real, cerca virtual, histórico de trajetos, bateria de longa duração e resistência à água. Cães e gatos em primeiro plano e ícones explicativos organizam a informação.",
-    destaques: [
-      "Recursos do produto traduzidos em ícones e frases curtas.",
-      "Animais em destaque, que criam conexão emocional com quem tem pet.",
-      "Formato pensado para o YouTube, com título forte logo no primeiro quadro."
-    ],
-    meuPapel: "Captação e edição."
+    ideia: "Série semanal de vídeos sobre as funcionalidades e as características da coleira GPS da The Pet GPS, com foco em mostrar tudo o que o produto oferece.",
+    meuPapel: "Roteiro, captação de imagens, separação do material, montagem, decupagem, edição, sonorização, thumbnail e publicação no YouTube.",
+    ferramentas: ["Illustrator", "After Effects", "Premiere Pro"]
   },
   {
     id: "punk-doc",
-    titulo: "Punk Doc",
+    titulo: "Documentário Punk Doc",
     cliente: "Projeto de graduação",
     categoria: "institucional",
     formato: "Documentário",
     capa: "assets/capas/punk-doc.jpg",
     youtubeId: "pY5NIfL1-hw",
-    ideia: "Documentário produzido como trabalho de conclusão do bacharelado em Rádio e Televisão: um recorte da velha guarda do punk rock na capital paulista. A identidade nasce da própria cena, com letras que parecem cercadas de arame farpado, símbolo de anarquia em vermelho e preto total ao fundo.",
-    destaques: [
-      "Do roteiro à finalização, passando por captação, entrevistas e animação.",
-      "Tipografia agressiva e rústica, coerente com o assunto.",
-      "Vermelho e preto como linguagem de cartaz de show."
-    ],
-    meuPapel: "Captação, roteiro, edição, animação e entrevistas."
+    ideia: "Documentário produzido como trabalho de conclusão do bacharelado em Rádio e Televisão. Retrata um recorte do punk rock na capital paulista, com entrevistas de grandes nomes da cena dos anos 70, e discute como o movimento se encontra nos dias atuais.",
+    meuPapel: "Responsável por todas as etapas da produção: roteiro, entrevistas, captação, edição, montagem e sonorização.",
+    ferramentas: ["Illustrator", "Photoshop", "After Effects", "Premiere Pro", "Audition"]
   },
 
   /* ---------------- SOCIAL & CAMPANHA ---------------- */
   {
     id: "vloot-sorteio",
-    titulo: "Sorteio de disco",
+    titulo: "Sorteio de Disco Vloot Discos",
     cliente: "VLOOT Discos",
     categoria: "social",
     formato: "Vídeo de sorteio",
     capa: "assets/capas/vloot-sorteio.jpg",
     youtubeId: "jIYkjPPVGZE",
-    ideia: "Vídeo para o sorteio de um disco do The Offspring (Greatest Hits) no perfil da VLOOT Discos, clube de assinatura de vinil. O disco aparece em primeiro plano, sobre fundo em degradê verde, e as regras de participação entram na tela: seguir o perfil, marcar três amigos apaixonados por música e compartilhar nos stories.",
-    destaques: [
-      "Produto fotografado como objeto de desejo, com a capa e o vinil em destaque.",
-      "Regras de participação em lista curta, fáceis de entender.",
-      "Layout limpo, pronto para stories e feed."
-    ],
-    meuPapel: "Roteiro, animação e edição."
+    ideia: "Vídeo institucional para o lançamento de um sorteio da Vloot Discos, com a proximidade do show do Offspring no Brasil. A peça foi pensada para chamar atenção e incentivar a participação do público.",
+    meuPapel: "Compreensão da proposta do cliente e transformação em estratégia, com roteiro, animação, decupagem, edição e sonorização.",
+    ferramentas: ["Illustrator", "After Effects", "Premiere Pro"]
   },
 
   /* ---------------- REELS & VÍDEOS VERTICAIS ---------------- */
   {
     id: "reel-beira-mar-programas",
-    titulo: "Programas da casa",
+    titulo: "Reels Rádio Beira Mar",
     cliente: "Rádio Beira Mar",
     categoria: "reels",
     formato: "Reels",
     capa: "assets/capas/reel-beira-mar-programas.jpg",
     youtubeId: "GAryYJH2lWE",
     vertical: true,
-    ideia: "Reels para mostrar os programas da Rádio Beira Mar, de Ubatuba. Cartões de \"entrevista exclusiva\" aparecem sobre a imagem da conversa no estúdio, apresentando o convidado e o endereço da rádio.",
-    destaques: [
-      "Cartão de entrevista que identifica o convidado sem tirar o foco da conversa.",
-      "Identidade da emissora presente em todos os quadros.",
-      "Formato vertical pensado para o feed e os stories."
-    ],
-    meuPapel: "Roteiro, edição e montagem."
+    ideia: "Reels para as redes sociais que mostra o dia a dia da Rádio Beira Mar, seus programas e os conteúdos publicados pela emissora.",
+    meuPapel: "Seleção das imagens, roteiro, montagem, edição e sonorização.",
+    ferramentas: ["Photoshop", "Premiere Pro"]
   },
   {
     id: "reel-beira-mar-led",
-    titulo: "Reels e painel de LED",
+    titulo: "Painel de LED Rádio Beira Mar",
     cliente: "Rádio Beira Mar",
     categoria: "reels",
     formato: "Painel de LED",
     capa: "assets/capas/reel-beira-mar-led.jpg",
     youtubeId: "a7mcHhhmAHY",
     vertical: false,
-    ideia: "Vídeo pensado para dois usos: Reels e painel de LED. Foi exibido no painel de LED do centro de Ubatuba. A colagem em meio-tom, com boca em estilo pop art em amarelo e roxo, chama a atenção de longe e funciona mesmo sem som.",
-    destaques: [
-      "Cores de alto contraste, pensadas para leitura ao ar livre.",
-      "Textura de meio-tom que dá personalidade à mídia exterior.",
-      "Roteiro curto, para quem passa e olha por poucos segundos."
-    ],
-    meuPapel: "Roteiro, edição e montagem."
+    ideia: "Vídeo pensado para dois usos: redes sociais e painel de LED no centro de Ubatuba. A peça precisava chamar a atenção de quem passa pela rua e entregar uma informação rápida e fácil sobre a Rádio Beira Mar, no litoral.",
+    meuPapel: "Compreensão da comunicação da rádio e desenvolvimento das peças com uma identidade mais agressiva, incluindo roteiro, animação, montagem e sonorização.",
+    ferramentas: ["Photoshop", "Illustrator", "After Effects", "Premiere Pro"]
   },
   {
     id: "reel-gs2",
-    titulo: "Assinatura de Reels",
+    titulo: "Assinatura Animada GS2",
     cliente: "GS2 Marketing",
     categoria: "reels",
     formato: "Assinatura animada",
     capa: "assets/capas/reel-gs2.jpg",
     youtubeId: "n2L88xg8W6Q",
     vertical: true,
-    ideia: "Assinatura animada para fechar os Reels da GS2 Marketing. O símbolo da marca em roxo aparece de forma discreta sobre fundo neutro e dá o mesmo acabamento a todos os vídeos da agência.",
-    destaques: [
-      "Animação curta e limpa, que não disputa atenção com o conteúdo.",
-      "Reaproveitável em qualquer Reels da agência.",
-      "Consistência de marca ao final de cada vídeo."
-    ],
-    meuPapel: "Animação e edição."
+    ideia: "Assinatura animada inspirada no logotipo da GS2, formado por matrioscas: uma boneca se encaixa na outra e, em seguida, se transforma no logotipo da marca. Foi criada para fechar todos os vídeos publicados nas redes sociais.",
+    meuPapel: "Compreensão da comunicação da marca e estudo do logotipo, com criação dos desenhos, animações, montagem, edição e sonorização.",
+    ferramentas: ["Illustrator", "After Effects", "Premiere Pro"]
   },
   {
     id: "reel-ego-corp",
-    titulo: "Reels institucional",
+    titulo: "Reels Ads Ego Corp",
     cliente: "EGO Corp",
     categoria: "reels",
     formato: "Institucional",
     capa: "assets/capas/reel-ego-corp.jpg",
     youtubeId: "sS9inCa-bYQ",
     vertical: true,
-    ideia: "Reels institucional da EGO Corp, produtora de São José dos Campos. A pergunta \"Mora no Urbanova?\" abre a peça, e um celular com mapa e localização mostra um serviço local, a barbearia que vai até o cliente, de forma direta.",
-    destaques: [
-      "Pergunta de abertura que segmenta o público logo no primeiro segundo.",
-      "Mockup de celular com mapa que explica o serviço sem precisar de texto longo.",
-      "Tipografia forte, legível mesmo sem som."
-    ],
-    meuPapel: "Roteiro, montagem e edição."
+    ideia: "Reels em formato de anúncio para a Ego Corp, rápido, didático e ilustrativo, que apresenta todos os serviços oferecidos pela empresa.",
+    meuPapel: "Compreensão dos serviços e da mensagem do anúncio, separação dos materiais, animação de objetos e elementos, decupagem, edição, montagem e sonorização.",
+    ferramentas: ["Illustrator", "After Effects", "Premiere Pro"]
   },
   {
     id: "reel-ezaki",
-    titulo: "Instalação em destaque",
+    titulo: "Reels Ezaki",
     cliente: "Ezaki Ar Condicionados",
     categoria: "reels",
     formato: "Institucional",
     capa: "assets/capas/reel-ezaki.jpg",
     youtubeId: "VCe4kHyk5mk",
     vertical: true,
-    ideia: "Reels institucional da Ezaki Ar Condicionados. A instalação do equipamento aparece em cena real, com legendas curtas em destaque sobre a imagem para explicar cada etapa do serviço.",
-    destaques: [
-      "Cena real de trabalho, que passa confiança e profissionalismo.",
-      "Legendas curtas, para entender sem som.",
-      "Formato vertical direto ao ponto."
-    ],
-    meuPapel: "Roteiro, montagem e edição."
+    ideia: "Reels de apresentação da Ezaki para as redes sociais da empresa. A peça ajuda os clientes a entender como funciona o processo, com o cuidado, a segurança e a manutenção corretas do ar-condicionado.",
+    meuPapel: "Compreensão da comunicação e da identidade visual da empresa, com roteiro, edição, montagem e sonorização.",
+    ferramentas: ["Photoshop", "Premiere Pro"]
   },
   {
     id: "reel-artcolor-haus-decor",
-    titulo: "Haus Decor 2027",
+    titulo: "Reels Evento Haus Decor 2027",
     cliente: "Art Color Texturas",
     categoria: "reels",
     formato: "Divulgação de evento",
     capa: "assets/capas/reel-artcolor-haus-decor.jpg",
     youtubeId: "zktOOssP8N8",
     vertical: true,
-    ideia: "Reels de divulgação do evento Haus Decor 2027 para a Art Color Texturas. A equipe da empresa aparece à mesa, em tom descontraído, com legendas dinâmicas em laranja sobre a imagem.",
-    destaques: [
-      "Equipe em cena, que humaniza a marca e convida para o evento.",
-      "Legendas em cor de destaque para sustentar a atenção.",
-      "Ritmo de edição próprio de Reels."
-    ],
-    meuPapel: "Edição e montagem."
+    ideia: "Vídeo em estilo trailer de cinema que anuncia a participação da Artcolor no evento Haus Decor 2027.",
+    meuPapel: "Compreensão do briefing e do roteiro, com montagem, edição e sonorização.",
+    ferramentas: ["Photoshop", "Premiere Pro"]
   },
   {
     id: "reel-manza-led",
-    titulo: "Leve seu podcast ao próximo nível",
+    titulo: "Painel de LED Manza Studio",
     cliente: "Manza Studio",
     categoria: "reels",
     formato: "Painel de LED",
     capa: "assets/capas/reel-manza-led.jpg",
     youtubeId: "fO8mQNxmA44",
     vertical: true,
-    ideia: "Vídeo feito para Reels e para painéis de LED espalhados pela cidade, divulgando o aluguel do estúdio do Manza Studio. A imagem do estúdio vem acompanhada da lista de serviços (podcast, entrevistas, lives, videoaulas, depoimentos e produtos), com ondas de áudio em rosa nas laterais.",
-    destaques: [
-      "Chamada direta e a lista completa de serviços numa única tela.",
-      "Ondas de áudio que traduzem o universo do podcast.",
-      "Contato e site visíveis ao final."
-    ],
-    meuPapel: "Roteiro, montagem e edição."
+    ideia: "Vídeo produzido em duas versões, vertical e horizontal, para as redes sociais e para um painel de LED instalado em um bairro nobre de São José dos Campos.",
+    meuPapel: "Compreensão das informações e da comunicação do cliente, aplicação da identidade visual, ilustrações, animações, montagem, edição e sonorização.",
+    ferramentas: ["Photoshop", "Premiere Pro"]
   },
   {
     id: "reel-sicoob",
-    titulo: "Mais que uma escolha financeira",
+    titulo: "Reels Ads Sicoob",
     cliente: "Sicoob",
     categoria: "reels",
     formato: "Ads",
     capa: "assets/capas/reel-sicoob.jpg",
     youtubeId: "2wS1pcEhAUE",
     vertical: true,
-    ideia: "Vídeo em formato de anúncio para campanhas da Sicoob. A frase \"Mais que uma escolha financeira\" abre a peça e é seguida de \"Soluções para o que você precisar\", sobre a imagem da fachada de uma agência.",
-    destaques: [
-      "Mensagem institucional clara, em poucas palavras.",
-      "Imagem da agência que ancora a marca no mundo real.",
-      "Formato pensado para anúncios em campanhas."
-    ],
-    meuPapel: "Montagem e edição."
+    ideia: "Vídeo em formato de anúncio para a Sicoob, que mostra as facilidades do serviço e os motivos para preferi-lo em relação à concorrência.",
+    meuPapel: "Compreensão do que a marca queria comunicar, com montagem, animação, edição e sonorização.",
+    ferramentas: ["Photoshop", "After Effects", "Premiere Pro"]
   },
   {
     id: "reel-vloot-jackpot",
-    titulo: "Leve o jackpot",
+    titulo: "Reels “Casino” Vloot",
     cliente: "VLOOT Discos",
     categoria: "reels",
     formato: "Reels · tema do mês",
     capa: "assets/capas/reel-vloot-jackpot.jpg",
     youtubeId: "74A1zD5XMcE",
     vertical: true,
-    ideia: "Reels baseado no tema do mês escolhido pelo cliente, para o clube de assinatura de discos de vinil VLOOT Discos. A peça gira em torno do \"jackpot\", com tipografia grande em dourado e luz quente sobre fundo escuro.",
-    destaques: [
-      "Clima de cassino construído só com tipografia, cor e luz.",
-      "Cada tema do mês ganha uma identidade própria.",
-      "Chamada de assinatura no lugar certo da narrativa."
-    ],
-    meuPapel: "Roteiro, montagem e edição."
+    ideia: "Reels que apresenta o tema do mês da Vloot, cassino, no perfil da marca no Instagram.",
+    meuPapel: "Desenvolvimento de uma identidade visual baseada no tema, separação dos materiais, montagem, edição e sonorização.",
+    ferramentas: ["Photoshop", "After Effects", "Premiere Pro"]
   },
   {
     id: "reel-vloot-noir",
-    titulo: "Edição Noir",
+    titulo: "Reels “Noir” Vloot",
     cliente: "VLOOT Discos",
     categoria: "reels",
     formato: "Reels · tema do mês",
     capa: "assets/capas/reel-vloot-noir.jpg",
     youtubeId: "lc0qnXu8rOA",
     vertical: true,
-    ideia: "Outro Reels do tema do mês da VLOOT Discos, agora em versão noir: preto e branco, sombras e tipografia grande em cinza, com frases como \"O som preenche a cidade\".",
-    destaques: [
-      "Tratamento em preto e branco que cria clima de filme noir.",
-      "Tipografia gigante que ocupa a tela e conduz a leitura.",
-      "Mesma estrutura da série, com identidade visual diferente."
-    ],
-    meuPapel: "Roteiro, montagem e edição."
+    ideia: "Reels que apresenta o tema do mês da Vloot, noir, no perfil da marca no Instagram.",
+    meuPapel: "Desenvolvimento de uma identidade visual baseada no tema, separação dos materiais, montagem, edição e sonorização.",
+    ferramentas: ["Photoshop", "After Effects", "Premiere Pro"]
   }
 ];
 
-/* Sequência do "Tour de 2 minutos": três peças de áreas diferentes. */
-window.TOUR_PORTFOLIO = ["rock-n-pop", "planck-lego", "jp-ibope"];
+/* Sequência do "Tour de 2 minutos": cinco peças de áreas diferentes. */
+window.TOUR_PORTFOLIO = ["jp-ibope", "beira-mar-surf-pro", "planck-fisica", "reel-vloot-jackpot", "reel-ezaki"];
