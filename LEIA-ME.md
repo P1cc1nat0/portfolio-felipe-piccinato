@@ -30,3 +30,11 @@ Qualquer hospedagem estática serve (Netlify, Vercel, GitHub Pages). Suba a past
 - Cada peça tem `youtubeId` em `js/projetos.js`. Os 10 vídeos verticais ficam na aba "Reels" (`categoria: "reels"`, `vertical: true`).
 - IMPORTANTE: o player do YouTube não funciona abrindo o `index.html` com clique duplo (erro 153). Ele funciona normalmente com o site publicado (Netlify, Vercel, GitHub Pages) ou num servidor local: na pasta `site`, rode `python -m http.server 8000` e abra http://localhost:8000.
 - Novos clientes entram sozinhos nos filtros: basta usar o mesmo nome em `cliente`.
+
+## Idioma (português / inglês)
+
+- O seletor PT | EN fica no menu. A escolha fica salva no navegador. Sem escolha anterior, navegador em português abre em português e qualquer outro abre em inglês.
+- Link direto em inglês: `?lang=en` no final do endereço (por exemplo `https://piccinato.vercel.app/?lang=en`).
+- Textos fixos do site: português no `index.html`, inglês em `js/idiomas.js` (`TEXTOS_EN`, mesma chave do `data-i18n`).
+- Textos de cada peça em inglês: campo `en` de cada projeto em `js/projetos.js` (titulo, formato, ideia, meuPapel e, se preciso, cliente). Peça sem `en` aparece em português.
+- No inglês, o botão do currículo baixa `assets/documentos/resume-felipe-piccinato-en.pdf`.

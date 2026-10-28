@@ -23,6 +23,10 @@
   var botaoMaisReelsEl = document.getElementById("botaoMaisReels");
   var botaoMaisReelsTexto = document.getElementById("botaoMaisReelsTexto");
 
+  var TEXTOS_EN = window.TEXTOS_EN || {};
+  var UI = window.TEXTOS_UI;
+  var idioma = "pt";
+
   var LIMITE_INICIAL = 6;
   var LIMITE_REELS = 5;
   var categoriaAtiva = "todos";
@@ -40,8 +44,14 @@
   var elementoAntesDoModal = null;
 
   /* ---------- Utilidades ---------- */
+  function t(chave) { return UI[idioma][chave]; }
+  // Texto de um projeto no idioma ativo; sem tradução, cai no português.
+  function campo(p, nome) {
+    return idioma === "en" && p.en && p.en[nome] ? p.en[nome] : p[nome];
+  }
+  function nomeDaCategoria(cat) { return idioma === "en" && cat.nomeEn ? cat.nomeEn : cat.nome; }
   function nomeCategoria(id) {
-    for (var i = 0; i < CATEGORIAS.length; i++) if (CATEGORIAS[i].id === id) return CATEGORIAS[i].nome;
+    for (var i = 0; i < CATEGORIAS.length; i++) if (CATEGORIAS[i].id === id) return nomeDaCategoria(CATEGORIAS[i]);
     return "";
   }
   function pad(n) { return n < 10 ? "0" + n : String(n); }
@@ -66,16 +76,17 @@
     return saida.sort(function (a, b) { return a.localeCompare(b, "pt-BR"); });
   }
   function embedUrl(p) {
-    return "https://www.youtube-nocookie.com/embed/" + p.youtubeId + "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+    return "https://www.youtube-nocookie.com/embed/" + p.youtubeId + "?autoplay=1&rel=0&modestbranding=1&playsinline=1&hl=" + (idioma === "en" ? "en" : "pt-BR");
   }
 
   /* ---------- Grade principal: tipo de trabalho + cliente ---------- */
   function montarFiltros() {
-    var itens = [{ id: "todos", nome: "Todos" }].concat(CATEGORIAS);
+    filtrosEl.innerHTML = "";
+    var itens = [{ id: "todos", nome: t("todos") }].concat(CATEGORIAS);
     itens.forEach(function (cat) {
       var qtd = cat.id === "todos" ? PROJETOS.length : PROJETOS.filter(function (p) { return p.categoria === cat.id; }).length;
       if (cat.id !== "todos" && qtd === 0) return;
-      var btn = criar("button", "filtro", escapar(cat.nome) + " <small>" + pad(qtd) + "</small>");
+      var btn = criar("button", "filtro", escapar(nomeDaCategoria(cat)) + " <small>" + pad(qtd) + "</small>");
       btn.type = "button";
       btn.setAttribute("role", "tab");
       btn.setAttribute("aria-selected", cat.id === categoriaAtiva ? "true" : "false");
@@ -100,18 +111,18 @@
     card.type = "button";
     card.style.setProperty("--i", indiceAnimacao);
     card.dataset.id = p.id;
-    card.setAttribute("aria-label", "Abrir case: " + p.titulo);
-    card.dataset.rotulo = p.youtubeId ? "Assistir" : "Ver";
+    card.setAttribute("aria-label", t("abrirCase") + campo(p, "titulo"));
+    card.dataset.rotulo = p.youtubeId ? t("assistir") : t("ver");
     card.innerHTML =
       '<div class="card-moldura">' +
-        (p.destaque ? '<span class="card-selo">Destaque ★</span>' : "") +
+        (p.destaque ? '<span class="card-selo">' + t("destaque") + '</span>' : "") +
         (p.youtubeId ? '<span class="card-play" aria-hidden="true"></span>' : "") +
         '<div class="img"><img src="' + p.capa + '" alt="" loading="lazy"></div>' +
       '</div>' +
       '<div class="card-legenda">' +
         '<span class="card-num">' + pad(PRINCIPAIS.indexOf(p) + 1) + '</span>' +
-        '<h3>' + escapar(p.titulo) + '</h3>' +
-        '<span class="card-formato">' + escapar(p.formato) + '</span>' +
+        '<h3>' + escapar(campo(p, "titulo")) + '</h3>' +
+        '<span class="card-formato">' + escapar(campo(p, "formato")) + '</span>' +
       '</div>';
     card.addEventListener("click", function () { abrirCaso(p.id, false); });
     ligarCursorCard(card);
@@ -129,7 +140,7 @@
     tituloVerticalEl.hidden = categoriaAtiva !== "todos";
     gradeEl.innerHTML = "";
     if (!listaPrincipal.length && !soReels) {
-      gradeEl.appendChild(criar("p", "vazio", "Nenhuma peça neste filtro ainda."));
+      gradeEl.appendChild(criar("p", "vazio", t("vazio")));
     }
     var inicial = expandido ? listaPrincipal : listaPrincipal.slice(0, LIMITE_INICIAL);
     inicial.forEach(function (p, i) { gradeEl.appendChild(criarCard(p, i)); });
@@ -143,13 +154,13 @@
     maisEl.hidden = restPrincipal === 0;
     botaoMaisEl.setAttribute("aria-expanded", expandido ? "true" : "false");
     botaoMaisEl.classList.toggle("aberto", expandido);
-    botaoMaisTexto.textContent = expandido ? "Mostrar menos" : "Ver mais " + restPrincipal + (restPrincipal === 1 ? " projeto" : " projetos");
+    botaoMaisTexto.textContent = expandido ? t("mostrarMenos") : t("verMais")(restPrincipal);
 
     var restReels = categoriaAtiva === "todos" ? Math.max(0, REELS.length - LIMITE_REELS) : 0; // "Redes sociais" já mostra todos
     reelsMaisEl.hidden = restReels === 0;
     botaoMaisReelsEl.setAttribute("aria-expanded", expandidoReels ? "true" : "false");
     botaoMaisReelsEl.classList.toggle("aberto", expandidoReels);
-    botaoMaisReelsTexto.textContent = expandidoReels ? "Mostrar menos" : "Ver mais " + restReels + (restReels === 1 ? " projeto" : " projetos");
+    botaoMaisReelsTexto.textContent = expandidoReels ? t("mostrarMenos") : t("verMais")(restReels);
   }
 
   function alternarExpansao() {
@@ -174,15 +185,15 @@
       card.type = "button";
       card.style.setProperty("--i", i);
       card.dataset.id = p.id;
-      card.dataset.rotulo = "Assistir";
-      card.setAttribute("aria-label", "Assistir: " + p.titulo);
+      card.dataset.rotulo = t("assistir");
+      card.setAttribute("aria-label", t("assistirAria") + campo(p, "titulo"));
       card.innerHTML =
         '<div class="reel-moldura">' +
           '<img src="' + p.capa + '" alt="" loading="lazy">' +
-          '<span class="reel-tipo">' + escapar(p.formato) + '</span>' +
+          '<span class="reel-tipo">' + escapar(campo(p, "formato")) + '</span>' +
           '<span class="reel-play" aria-hidden="true"></span>' +
         '</div>' +
-        '<div class="reel-legenda"><strong>' + escapar(p.titulo) + '</strong></div>';
+        '<div class="reel-legenda"><strong>' + escapar(campo(p, "titulo")) + '</strong></div>';
       card.addEventListener("click", function () { abrirCaso(p.id, false); });
       ligarCursorCard(card);
       reelsGradeEl.appendChild(card);
@@ -190,15 +201,16 @@
   }
 
   /* ---------- Visualizador de case ---------- */
-  function preencherCaso(p, posicao, total) {
-    document.getElementById("casoCategoria").textContent = nomeCategoria(p.categoria) + " · " + p.formato;
-    document.getElementById("casoTitulo").textContent = p.titulo;
-    document.getElementById("casoCliente").textContent = p.cliente;
-    document.getElementById("casoIdeia").textContent = p.ideia;
+  /* Textos do visualizador no idioma ativo (separado do player para trocar o idioma sem reiniciar o vídeo). */
+  function preencherTextosCaso(p) {
+    document.getElementById("casoCategoria").textContent = nomeCategoria(p.categoria) + " · " + campo(p, "formato");
+    document.getElementById("casoTitulo").textContent = campo(p, "titulo");
+    document.getElementById("casoCliente").textContent = campo(p, "cliente");
+    document.getElementById("casoIdeia").textContent = campo(p, "ideia");
 
     var papelBloco = document.getElementById("casoPapelBloco");
     if (p.meuPapel) {
-      document.getElementById("casoPapel").textContent = p.meuPapel;
+      document.getElementById("casoPapel").textContent = campo(p, "meuPapel");
       papelBloco.hidden = false;
     } else {
       papelBloco.hidden = true;
@@ -206,8 +218,12 @@
 
     var ferramentas = document.getElementById("casoFerramentas");
     ferramentas.innerHTML = "";
-    (p.ferramentas || []).forEach(function (t) { ferramentas.appendChild(criar("li", "", escapar(t))); });
+    (p.ferramentas || []).forEach(function (nome) { ferramentas.appendChild(criar("li", "", escapar(nome))); });
     ferramentas.previousElementSibling.hidden = !(p.ferramentas && p.ferramentas.length);
+  }
+
+  function preencherCaso(p, posicao, total) {
+    preencherTextosCaso(p);
 
     var linkBehance = document.getElementById("casoBehance");
     var linkYoutube = document.getElementById("casoYoutube");
@@ -228,11 +244,11 @@
       f.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture";
       f.allowFullscreen = true;
       f.referrerPolicy = "strict-origin-when-cross-origin";
-      f.title = p.titulo + " — " + p.cliente;
+      f.title = campo(p, "titulo") + " — " + campo(p, "cliente");
       imagem.appendChild(f);
     } else {
       var img = document.createElement("img");
-      img.src = p.capa; img.alt = "Capa do projeto " + p.titulo;
+      img.src = p.capa; img.alt = t("capaDe") + campo(p, "titulo");
       imagem.appendChild(img);
     }
 
@@ -247,13 +263,13 @@
     var ant = document.getElementById("casoAnterior");
     if (modoTour) {
       tourEl.hidden = false;
-      tourEl.textContent = "Tour de 2 minutos · " + (passoTour + 1) + " de " + TOUR.length;
+      tourEl.textContent = t("tour")(passoTour + 1, TOUR.length);
       ant.style.visibility = passoTour === 0 ? "hidden" : "visible";
-      prox.textContent = passoTour === TOUR.length - 1 ? "Terminar tour" : "Próxima do tour";
+      prox.textContent = passoTour === TOUR.length - 1 ? t("terminarTour") : t("proximaTour");
     } else {
       tourEl.hidden = true;
       ant.style.visibility = "visible";
-      prox.textContent = "Próxima";
+      prox.textContent = t("proxima");
     }
   }
 
@@ -323,7 +339,7 @@
     var btn = this;
     var atual = modalLista[modalIdx];
     var url = location.href.split("#")[0] + "#caso-" + (atual ? atual.id : "");
-    function ok() { var t = btn.textContent; btn.textContent = "Link copiado ✓"; setTimeout(function () { btn.textContent = t; }, 1800); }
+    function ok() { var antes = btn.textContent; btn.textContent = t("linkCopiado"); setTimeout(function () { btn.textContent = antes; }, 1800); }
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(ok, ok);
     else ok();
   });
@@ -441,11 +457,48 @@
     card.addEventListener("mouseleave", function () { cursor.classList.remove("grande"); });
   }
 
+  /* ---------- Idioma (português / inglês) ---------- */
+  var traduziveis = document.querySelectorAll("[data-i18n]");
+  Array.prototype.forEach.call(traduziveis, function (el) { el.dataset.pt = el.innerHTML; });
+  var botoesIdioma = document.querySelectorAll(".idioma-troca button");
+  var metaDescricao = document.querySelector('meta[name="description"]');
+
+  function idiomaInicial() {
+    var pedido = (location.search.match(/[?&]lang=(pt|en)/) || [])[1];
+    if (pedido) return pedido;
+    try { var salvo = localStorage.getItem("idioma"); if (salvo === "pt" || salvo === "en") return salvo; } catch (e) {}
+    // Sem escolha anterior: navegador em português abre em português; qualquer outro abre em inglês.
+    return /^pt/i.test(navigator.language || "pt") ? "pt" : "en";
+  }
+
+  function aplicarIdioma(novo, salvar) {
+    idioma = novo;
+    if (salvar) { try { localStorage.setItem("idioma", novo); } catch (e) {} }
+    document.documentElement.lang = novo === "en" ? "en" : "pt-BR";
+    document.title = t("tituloPagina");
+    if (metaDescricao) metaDescricao.setAttribute("content", t("descricaoPagina"));
+    Array.prototype.forEach.call(traduziveis, function (el) {
+      el.innerHTML = novo === "en" && TEXTOS_EN[el.dataset.i18n] != null ? TEXTOS_EN[el.dataset.i18n] : el.dataset.pt;
+    });
+    Array.prototype.forEach.call(botoesIdioma, function (b) { b.setAttribute("aria-pressed", b.dataset.idioma === novo ? "true" : "false"); });
+    var curriculo = document.getElementById("linkCurriculo");
+    if (curriculo) curriculo.setAttribute("href", t("curriculo"));
+
+    montarFiltros();
+    montarGrade();
+    if (!casoEl.hidden && modalLista[modalIdx]) {
+      preencherTextosCaso(modalLista[modalIdx]);
+      atualizarNavegacao();
+    }
+  }
+
+  Array.prototype.forEach.call(botoesIdioma, function (b) {
+    b.addEventListener("click", function () { aplicarIdioma(b.dataset.idioma, true); });
+  });
+
   /* ---------- Início ---------- */
   botaoMaisEl.addEventListener("click", alternarExpansao);
   botaoMaisReelsEl.addEventListener("click", alternarExpansaoReels);
-  montarFiltros();
-  montarGrade();
-  montarReels();
+  aplicarIdioma(idiomaInicial(), false);
   abrirPeloHash();
 })();

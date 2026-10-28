@@ -22,12 +22,18 @@
 <header class="nav" id="nav">
   <a class="nav-marca" href="#topo" aria-label="Felipe Piccinato, início"><img src="assets/marca/mascote.png" alt="Mascote de Felipe Piccinato"></a>
   <nav class="nav-links" aria-label="Principal">
-    <a href="#trabalhos">Trabalhos</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#processo">Processo</a>
-    <a href="#contato">Contato</a>
+    <a href="#trabalhos" data-i18n="nav_trabalhos">Trabalhos</a>
+    <a href="#sobre" data-i18n="nav_sobre">Sobre</a>
+    <a href="#processo" data-i18n="nav_processo">Processo</a>
+    <a href="#contato" data-i18n="nav_contato">Contato</a>
   </nav>
-  <button class="botao botao-vermelho botao-mini" id="botaoTourNav" type="button">Tour de 2 min</button>
+  <div class="nav-direita">
+    <div class="idioma-troca" role="group" aria-label="Idioma / Language">
+      <button type="button" data-idioma="pt" aria-pressed="true">PT</button>
+      <button type="button" data-idioma="en" aria-pressed="false">EN</button>
+    </div>
+    <button class="botao botao-vermelho botao-mini" id="botaoTourNav" type="button" data-i18n="nav_tour">Tour de 2 min</button>
+  </div>
 </header>
 
 <main id="topo">
@@ -37,8 +43,8 @@
     <div class="hero-brilho" id="heroBrilho" aria-hidden="true"></div>
 
     <div class="hero-topo">
-      <p class="hero-etiqueta">Portfólio · 2026</p>
-      <p class="hero-etiqueta hero-etiqueta-dir">Motion Designer<br>Editor de Vídeo<br>Diretor de Arte</p>
+      <p class="hero-etiqueta" data-i18n="hero_etiqueta">Portfólio · 2026</p>
+      <p class="hero-etiqueta hero-etiqueta-dir" data-i18n="hero_cargos">Motion Designer<br>Editor de Vídeo<br>Diretor de Arte</p>
     </div>
 
     <h1 class="hero-nome" aria-label="Felipe Piccinato">
@@ -49,22 +55,22 @@
     <div class="selo" aria-hidden="true">
       <svg viewBox="0 0 200 200">
         <defs><path id="circulo" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
-        <text><textPath href="#circulo" startOffset="0" textLength="486" lengthAdjust="spacing">Motion · Vídeo · Direção de arte ·</textPath></text>
+        <text><textPath data-i18n="selo" href="#circulo" startOffset="0" textLength="486" lengthAdjust="spacing">Motion · Vídeo · Direção de arte ·</textPath></text>
       </svg>
       <span>✦</span>
     </div>
 
     <div class="hero-base">
       <div class="hero-texto">
-        <p class="hero-sub"><strong>Motion design e vídeo com estratégia.</strong> Vinhetas, comerciais, VSLs e conteúdo para redes que capturam a atenção, comunicam com clareza e sustentam a marca, com agilidade e acabamento profissional.</p>
+        <p class="hero-sub" data-i18n="hero_sub"><strong>Motion design e vídeo com estratégia.</strong> Vinhetas, comerciais, VSLs e conteúdo para redes que capturam a atenção, comunicam com clareza e sustentam a marca, com agilidade e acabamento profissional.</p>
         <div class="hero-acoes">
-          <a class="botao botao-escuro" href="#trabalhos">Ver trabalhos <span aria-hidden="true">↓</span></a>
-          <button class="botao botao-vermelho" id="botaoTourHero" type="button"><span class="play" aria-hidden="true"></span>Tour de 2 minutos</button>
+          <a class="botao botao-escuro" href="#trabalhos" data-i18n="hero_ver">Ver trabalhos <span aria-hidden="true">↓</span></a>
+          <button class="botao botao-vermelho" id="botaoTourHero" type="button" data-i18n="hero_tour"><span class="play" aria-hidden="true"></span>Tour de 2 minutos</button>
         </div>
         <dl class="hero-numeros">
-          <div><dt data-contar="10" data-prefixo="+">+0</dt><dd>anos de experiência</dd></div>
-          <div><dt data-contar="150" data-prefixo="+">+0</dt><dd>clientes atendidos</dd></div>
-          <div><dt id="numPecas" data-contar="14">0</dt><dd>peças nesta seleção</dd></div>
+          <div><dt data-contar="10" data-prefixo="+">+0</dt><dd data-i18n="num_anos">anos de experiência</dd></div>
+          <div><dt data-contar="150" data-prefixo="+">+0</dt><dd data-i18n="num_clientes">clientes atendidos</dd></div>
+          <div><dt id="numPecas" data-contar="14">0</dt><dd data-i18n="num_pecas">peças nesta seleção</dd></div>
         </dl>
       </div>
 
@@ -81,15 +87,15 @@
   <!-- TRABALHOS -->
   <section class="secao" id="trabalhos">
     <div class="secao-topo reveal">
-      <p class="rotulo"><b>01</b> Trabalhos</p>
-      <h2>Uma seleção do que<br>eu faço <em>melhor.</em></h2>
-      <p class="secao-sub">Filtre por tipo de trabalho e clique numa peça para assistir e ver a ideia por trás dela. Setas do teclado navegam entre as peças.</p>
+      <p class="rotulo" data-i18n="trab_rotulo"><b>01</b> Trabalhos</p>
+      <h2 data-i18n="trab_h2">Uma seleção do que<br>eu faço <em>melhor.</em></h2>
+      <p class="secao-sub" data-i18n="trab_sub">Filtre por tipo de trabalho e clique numa peça para assistir e ver a ideia por trás dela. Setas do teclado navegam entre as peças.</p>
     </div>
 
     <div class="filtros-linha reveal">
       <div class="filtros" id="filtros" role="tablist" aria-label="Filtrar por tipo de trabalho"></div>
     </div>
-    <h3 class="grupo-titulo" id="tituloHorizontal"><span>Horizontal</span><small>Vídeos longos, vinhetas e comerciais</small></h3>
+    <h3 class="grupo-titulo" id="tituloHorizontal" data-i18n="titulo_horizontal"><span>Horizontal</span><small>Vídeos longos, vinhetas e comerciais</small></h3>
     <div class="grade" id="grade" aria-live="polite"></div>
     <div class="grade-mais" id="gradeMais" hidden>
       <button class="botao-mais" id="botaoMais" type="button" aria-expanded="false" aria-controls="grade">
@@ -97,7 +103,7 @@
         <i aria-hidden="true">+</i>
       </button>
     </div>
-    <h3 class="grupo-titulo" id="tituloVertical"><span>Vertical</span><small>Reels e vídeos para redes sociais</small></h3>
+    <h3 class="grupo-titulo" id="tituloVertical" data-i18n="titulo_vertical"><span>Vertical</span><small>Reels e vídeos para redes sociais</small></h3>
     <div class="reels-grade" id="reelsGrade" aria-live="polite"></div>
     <div class="grade-mais" id="reelsMais" hidden>
       <button class="botao-mais" id="botaoMaisReels" type="button" aria-expanded="false" aria-controls="reelsGrade">
@@ -118,22 +124,22 @@
         </div>
       </figure>
       <div class="sobre-texto reveal">
-        <p class="rotulo"><b>02</b> Sobre</p>
-        <h2 class="sobre-ola">Oi, eu sou o Felipe.</h2>
-        <p class="sobre-lide">Crio <em>vídeos com propósito</em> para marcas que querem ser notadas.</p>
-        <p>Motion designer e editor de vídeo com mais de dez anos de atuação e formação em Rádio e Televisão. Minha trajetória passa por design gráfico, direção de arte e produção audiovisual, e hoje se concentra em motion design e edição para marcas, agências e veículos de comunicação.</p>
-        <p>Atuo do conceito à entrega: pesquiso, desenvolvo a ideia, produzo e finalizo peças como vinhetas, comerciais, VSLs e conteúdo para redes sociais. Integro inteligência artificial ao fluxo de produção para ganhar agilidade sem abrir mão de criatividade e acabamento.</p>
+        <p class="rotulo" data-i18n="sobre_rotulo"><b>02</b> Sobre</p>
+        <h2 class="sobre-ola" data-i18n="sobre_ola">Oi, eu sou o Felipe.</h2>
+        <p class="sobre-lide" data-i18n="sobre_lide">Crio <em>vídeos com propósito</em> para marcas que querem ser notadas.</p>
+        <p data-i18n="sobre_p1">Motion designer e editor de vídeo com mais de dez anos de atuação e formação em Rádio e Televisão. Minha trajetória passa por design gráfico, direção de arte e produção audiovisual, e hoje se concentra em motion design e edição para marcas, agências e veículos de comunicação.</p>
+        <p data-i18n="sobre_p2">Atuo do conceito à entrega: pesquiso, desenvolvo a ideia, produzo e finalizo peças como vinhetas, comerciais, VSLs e conteúdo para redes sociais. Integro inteligência artificial ao fluxo de produção para ganhar agilidade sem abrir mão de criatividade e acabamento.</p>
 
-        <h3 class="sobre-subtitulo">Experiência</h3>
+        <h3 class="sobre-subtitulo" data-i18n="sobre_experiencia">Experiência</h3>
         <div class="trilha">
-          <div class="trilha-item"><b>2016–atual</b><span><strong>Freelancer</strong> · Motion Designer e Editor de Vídeo<br><small>Projetos para rádios, escolas, comércio e agências, como Jovem Pan, Rádio Beira Mar, Colégio Planck e Polipet</small></span></div>
-          <div class="trilha-item"><b>2026</b><span><strong>DirectCash</strong> · Editor de Vídeo<br><small>VSLs, conteúdo para Instagram e automações com IA</small></span></div>
-          <div class="trilha-item"><b>2024–25</b><span><strong>GS2 Marketing</strong> · Motion Designer<br><small>Vinhetas, ilustrações e vídeos para redes</small></span></div>
-          <div class="trilha-item"><b>2022–24</b><span><strong>Gecko Marketing Digital</strong> · Diretor de Arte<br><small>Equipe de design, identidade visual e campanhas</small></span></div>
-          <div class="trilha-item"><b>2022–23</b><span><strong>Manza Studio</strong> · Editor-Chefe<br><small>Podcasts: gravação e edição</small></span></div>
+          <div class="trilha-item" data-i18n="exp_freelancer"><b>2016–atual</b><span><strong>Freelancer</strong> · Motion Designer e Editor de Vídeo<br><small>Projetos para rádios, escolas, comércio e agências, como Jovem Pan, Rádio Beira Mar, Colégio Planck e Polipet</small></span></div>
+          <div class="trilha-item" data-i18n="exp_directcash"><b>2026</b><span><strong>DirectCash</strong> · Editor de Vídeo<br><small>VSLs, conteúdo para Instagram e automações com IA</small></span></div>
+          <div class="trilha-item" data-i18n="exp_gs2"><b>2024–25</b><span><strong>GS2 Marketing</strong> · Motion Designer<br><small>Vinhetas, ilustrações e vídeos para redes</small></span></div>
+          <div class="trilha-item" data-i18n="exp_gecko"><b>2022–24</b><span><strong>Gecko Marketing Digital</strong> · Diretor de Arte<br><small>Equipe de design, identidade visual e campanhas</small></span></div>
+          <div class="trilha-item" data-i18n="exp_manza"><b>2022–23</b><span><strong>Manza Studio</strong> · Editor-Chefe<br><small>Podcasts: gravação e edição</small></span></div>
         </div>
 
-        <h3 class="sobre-subtitulo">Ferramentas</h3>
+        <h3 class="sobre-subtitulo" data-i18n="sobre_ferramentas">Ferramentas</h3>
         <ul class="ferramentas" aria-label="Ferramentas">
           <li title="After Effects"><svg viewBox="0 0 48 48" role="img" aria-label="After Effects"><rect x="1.5" y="1.5" width="45" height="45" rx="10" fill="#00005B" stroke="#9999FF" stroke-width="2"/><text x="24" y="31.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="21" fill="#9999FF">Ae</text></svg></li>
           <li title="Premiere Pro"><svg viewBox="0 0 48 48" role="img" aria-label="Premiere Pro"><rect x="1.5" y="1.5" width="45" height="45" rx="10" fill="#00005B" stroke="#9999FF" stroke-width="2"/><text x="24" y="31.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="21" fill="#9999FF">Pr</text></svg></li>
@@ -149,30 +155,30 @@
   <!-- PROCESSO -->
   <section class="secao" id="processo">
     <div class="secao-topo reveal">
-      <p class="rotulo"><b>03</b> Processo</p>
-      <h2>Do briefing à entrega,<br><em>um processo claro.</em></h2>
+      <p class="rotulo" data-i18n="proc_rotulo"><b>03</b> Processo</p>
+      <h2 data-i18n="proc_h2">Do briefing à entrega,<br><em>um processo claro.</em></h2>
     </div>
     <ol class="passos">
-      <li class="passo reveal"><span class="passo-num">1</span><h3>Briefing</h3><p>Levantamento de objetivo, público e canal. Saber onde a peça vai rodar (TV, mídia indoor, redes sociais ou página de vendas) define formato, duração e linguagem.</p></li>
-      <li class="passo reveal"><span class="passo-num">2</span><h3>Conceito</h3><p>Pesquisa de referências, roteiro visual e definição da linha criativa. Cada decisão de cor, ritmo e tipografia parte de uma ideia central, e não do acaso.</p></li>
-      <li class="passo reveal"><span class="passo-num">3</span><h3>Produção</h3><p>Motion, edição e design com acabamento profissional. Ferramentas de IA automatizam as tarefas repetitivas e liberam tempo para o que diferencia a peça.</p></li>
-      <li class="passo reveal"><span class="passo-num">4</span><h3>Entrega</h3><p>Arquivos finalizados nos formatos de cada canal, dentro do prazo e prontos para publicar, com revisões objetivas e alinhadas desde o início.</p></li>
+      <li class="passo reveal"><span class="passo-num">1</span><h3 data-i18n="passo1_t">Briefing</h3><p data-i18n="passo1_d">Levantamento de objetivo, público e canal. Saber onde a peça vai rodar (TV, mídia indoor, redes sociais ou página de vendas) define formato, duração e linguagem.</p></li>
+      <li class="passo reveal"><span class="passo-num">2</span><h3 data-i18n="passo2_t">Conceito</h3><p data-i18n="passo2_d">Pesquisa de referências, roteiro visual e definição da linha criativa. Cada decisão de cor, ritmo e tipografia parte de uma ideia central, e não do acaso.</p></li>
+      <li class="passo reveal"><span class="passo-num">3</span><h3 data-i18n="passo3_t">Produção</h3><p data-i18n="passo3_d">Motion, edição e design com acabamento profissional. Ferramentas de IA automatizam as tarefas repetitivas e liberam tempo para o que diferencia a peça.</p></li>
+      <li class="passo reveal"><span class="passo-num">4</span><h3 data-i18n="passo4_t">Entrega</h3><p data-i18n="passo4_d">Arquivos finalizados nos formatos de cada canal, dentro do prazo e prontos para publicar, com revisões objetivas e alinhadas desde o início.</p></li>
     </ol>
   </section>
 
   <!-- CONTATO -->
   <section class="contato" id="contato">
     <div class="contato-miolo reveal">
-      <p class="rotulo rotulo-escuro"><b>04</b> Contato</p>
-      <h2>Tem uma ideia?<br>Vamos <em>conversar.</em></h2>
+      <p class="rotulo rotulo-escuro" data-i18n="cont_rotulo"><b>04</b> Contato</p>
+      <h2 data-i18n="cont_h2">Tem uma ideia?<br>Vamos <em>conversar.</em></h2>
       <div class="contato-acoes">
-        <a class="botao botao-escuro botao-grande" href="https://wa.me/5512992455255" target="_blank" rel="noopener">Chamar no WhatsApp <span aria-hidden="true">→</span></a>
+        <a class="botao botao-escuro botao-grande" href="https://wa.me/5512992455255" target="_blank" rel="noopener" data-i18n="cont_whatsapp">Chamar no WhatsApp <span aria-hidden="true">→</span></a>
         <a class="botao botao-contorno-escuro botao-grande" href="mailto:felipepiccinato@hotmail.com">felipepiccinato@hotmail.com</a>
       </div>
       <ul class="contato-links">
         <li><a href="https://www.linkedin.com/in/felipe-piccinato-lorenzoni/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
         <li><a href="https://www.behance.net/piccinato" target="_blank" rel="noopener">Behance ↗</a></li>
-        <li><a href="assets/documentos/curriculo-felipe-piccinato.pdf" download>Baixar currículo (PDF) ↓</a></li>
+        <li><a href="assets/documentos/curriculo-felipe-piccinato.pdf" download id="linkCurriculo" data-i18n="cont_curriculo">Baixar currículo (PDF) ↓</a></li>
       </ul>
     </div>
   </section>
@@ -181,8 +187,8 @@
 
 <footer class="rodape">
   <span>© 2026 Felipe Piccinato</span>
-  <span>Motion Designer · São José dos Campos, SP</span>
-  <a href="#topo">Voltar ao topo ↑</a>
+  <span data-i18n="rodape_cargo">Motion Designer · São José dos Campos, SP</span>
+  <a href="#topo" data-i18n="rodape_topo">Voltar ao topo ↑</a>
 </footer>
 
 <!-- VISUALIZADOR DE CASE -->
@@ -202,32 +208,33 @@
       <h3 id="casoTitulo"></h3>
       <p class="caso-cliente" id="casoCliente"></p>
 
-      <h4>A ideia</h4>
+      <h4 data-i18n="caso_ideia">A ideia</h4>
       <p class="caso-ideia" id="casoIdeia"></p>
 
       <div id="casoPapelBloco" hidden>
-        <h4>Meu papel</h4>
+        <h4 data-i18n="caso_papel">Meu papel</h4>
         <p id="casoPapel"></p>
       </div>
 
-      <h4>Ferramentas</h4>
+      <h4 data-i18n="caso_ferramentas">Ferramentas</h4>
       <ul class="caso-ferramentas" id="casoFerramentas"></ul>
 
       <div class="caso-acoes">
-        <a class="botao botao-contorno-escuro botao-mini" id="casoYoutube" target="_blank" rel="noopener" hidden>Ver no YouTube ↗</a>
+        <a class="botao botao-contorno-escuro botao-mini" id="casoYoutube" target="_blank" rel="noopener" hidden data-i18n="caso_youtube">Ver no YouTube ↗</a>
         <a class="botao botao-contorno-escuro botao-mini" id="casoBehance" target="_blank" rel="noopener" hidden>Ver no Behance ↗</a>
-        <button class="botao botao-contorno-escuro botao-mini" id="casoCopiar" type="button">Copiar link da peça</button>
+        <button class="botao botao-contorno-escuro botao-mini" id="casoCopiar" type="button" data-i18n="caso_copiar">Copiar link da peça</button>
       </div>
     </div>
 
     <nav class="caso-nav" aria-label="Navegar entre peças">
-      <button type="button" id="casoAnterior" aria-label="Peça anterior"><span>←</span><em>Anterior</em></button>
+      <button type="button" id="casoAnterior" aria-label="Peça anterior"><span>←</span><em data-i18n="caso_anterior">Anterior</em></button>
       <button type="button" id="casoProximo" aria-label="Próxima peça"><em id="casoProximoTexto">Próxima</em><span>→</span></button>
     </nav>
   </div>
 </div>
 
 <script src="js/projetos.js"></script>
+<script src="js/idiomas.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -361,3 +361,10 @@ body.travado { overflow: hidden; }
 @media (max-width: 860px) {
   .caso-janela:has(.caso-midia.vertical) { grid-template-columns: 1fr; grid-template-rows: 62vh minmax(0, 1fr) auto; }
 }
+
+/* ---------- Seletor de idioma ---------- */
+.nav-direita { display: flex; align-items: center; gap: 14px; }
+.idioma-troca { display: inline-flex; border: 2px solid var(--tinta); border-radius: 999px; overflow: hidden; }
+.idioma-troca button { font-family: var(--f-titulo); font-weight: 800; font-size: 12px; letter-spacing: .02em; padding: 7px 12px; color: var(--tinta); transition: background .25s, color .25s; }
+.idioma-troca button[aria-pressed="true"] { background: var(--tinta); color: var(--osso); }
+.idioma-troca button:not([aria-pressed="true"]):hover { background: var(--vermelho); color: #fff; }
